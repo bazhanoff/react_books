@@ -2,8 +2,8 @@ import React from 'react';
 
 import books from '../data/books';
 
-function Book() {
-    const book = books.find(book => book.slug === 'learning-javascript');
+function Book({ match: { params } }) {
+    const book = books.find(book => book.slug === params.book);
 
     return (
         <main id="book">
