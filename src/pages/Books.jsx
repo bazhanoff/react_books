@@ -1,10 +1,9 @@
 import React from 'react';
 
-import books from '../data/books';
 import Card from '../components/Card';
 
 function Books(props) {
-    const { match: { params } } = props;
+    const { match: { params }, books } = props;
     const filteredBooks = params.topic ? books.filter(book => book.topic === params.topic) : books;
     return (
         <main id="books">

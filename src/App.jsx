@@ -12,18 +12,19 @@ import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 class App extends Component {
     render() {
+        const { topics, books } = this.props;
         return (
             <Router>
                 <div className="app">
                     <Toolbar />
 
                     <Content>
-                    <Route path='/books' component={Sidenav} />
+                    <Route path='/books' render={props => <Sidenav topics={topics} {...props} />} />
                         <Switch>
                             <Route exact path="/" component={Home} />
                             <Route path='/about' component={About} />
-                            <Route exact path='/books/:topic?' component={Books} />
-                            <Route path='/books/:topic/:book' component={Book} />
+                            <Route exact path='/books/:topic?' render={props => <Books books={books} {...props} />}  />
+                            <Route path='/books/:topic/:book'  render={props => <Book books={books} {...props}/>} />
                             <Route path="/login" component={Login} />
                             <Route component={NotFound} />
                         </Switch>

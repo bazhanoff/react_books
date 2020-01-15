@@ -87,3 +87,7 @@ export const ToolbarLink = ({ children, ...rest }) =>
 
   Использование match
 match - объект, предоставляющий соответствие маршрута значения url. 
+
+  Передача данных
+Компонент Route позволяет передавать компонентам данные через свойства. 
+<Route path='/books/:topic/:book'  render={props => <Book books={books} {...props}/>} />
