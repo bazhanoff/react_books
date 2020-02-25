@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom'; 
 
 import App from './App';
 
@@ -9,4 +10,9 @@ import './index.css';
 import books from './data/books';
 import topics from './data/topics';
 
-ReactDOM.render(<App topics={topics} books={books} />, document.getElementById('root'));
+ReactDOM.render(
+    <Router>
+        <App topics={topics} books={books} /> 
+    </Router>, 
+    document.getElementById('root')
+);

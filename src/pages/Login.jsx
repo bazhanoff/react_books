@@ -20,6 +20,7 @@ class Login extends Component {
                             name="username"
                             className="mdc-textfield__input"
                             placeholder="Имя пользователя"
+                            defaultValue="admin"
                             ref={input => this.usernameInput = input} />
                     </div>
                     
@@ -29,6 +30,7 @@ class Login extends Component {
                             name="password"
                             className="mdc-textfield__input"
                             placeholder="Пароль"
+                            defaultValue="123"
                             ref={input => this.passwordInput = input} />
                     </div>
 
